@@ -17,7 +17,7 @@ class Program
         while (replayGame.ToLower() == "yes")
         {
             // declare random number, guess and guess count variables variable 
-            int number = randomGenerator.Next(1, 11);
+            int number = randomGenerator.Next(1, 100);
             int guess = 0;
             int guessCount = 0;
             string word;
