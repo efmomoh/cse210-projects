@@ -18,6 +18,8 @@ public class PromptGenerator
             "What was the strongest emotion I felt today?",
             "If I had one thing I could do over today, what would it be?",
             "What does your favorite scripture says?",
+            "What is your favorite book?",
+            "Do you watch movies, how often?"
         };
 
         _random = new Random();
