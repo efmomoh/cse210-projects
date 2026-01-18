@@ -53,34 +53,31 @@ class Program
                     Console.WriteLine("Please enter a number between 1 and 5: ");
                 }
 
-
                 // declare an Entry class constructor and pass the constructor parameters as argument => Add entry to journal
                 Entry anEntry = new Entry(date, promptText, entryText, moodEntry.ToString());
                 theJournal.AddEntry(anEntry);
             }
+
             else if (choice == 2)
             {
                 // call and display the journal method
                 theJournal.DisplayAll();
             }
+
             else if (choice == 3)
             {
                 // prompt and saves filename
                 Console.WriteLine("Enter filename to load: ");
                 string filename = Console.ReadLine();
                 theJournal.LoadFromFile(filename);
-
-
             }
+
             else if (choice == 4)
             {
                 Console.WriteLine("Enter filename to save: ");
                 string filename = Console.ReadLine();
                 theJournal.SaveToFile(filename);
-
-
             }
-
         }
         // print exit message
         Console.WriteLine("\nThank you for using our journal service!\n");
