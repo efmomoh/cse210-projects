@@ -8,7 +8,7 @@ class Program
 
         // call, declare and instantiate the prompt generator class
         PromptGenerator promptGenerator = new PromptGenerator();
-        Journal journal = new Journal();
+        Journal theJournal = new Journal();
 
         // while loop choice => stores user menu choice
         int choice = 0;
@@ -56,19 +56,19 @@ class Program
 
                 // declare an Entry class constructor and pass the constructor parameters as argument => Add entry to journal
                 Entry anEntry = new Entry(date, promptText, entryText, moodEntry.ToString());
-                journal.AddEntry(anEntry);
+                theJournal.AddEntry(anEntry);
             }
             else if (choice == 2)
             {
                 // call and display the journal method
-                journal.DisplayAll();
+                theJournal.DisplayAll();
             }
             else if (choice == 3)
             {
                 // prompt and saves filename
                 Console.WriteLine("Enter filename to load: ");
                 string filename = Console.ReadLine();
-                journal.LoadFromFile(filename);
+                theJournal.LoadFromFile(filename);
 
 
             }
@@ -76,7 +76,7 @@ class Program
             {
                 Console.WriteLine("Enter filename to save: ");
                 string filename = Console.ReadLine();
-                journal.SaveToFile(filename);
+                theJournal.SaveToFile(filename);
 
 
             }
