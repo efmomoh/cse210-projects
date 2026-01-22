@@ -18,7 +18,7 @@ class Program
         {
             // declare random number, guess and guess count variables variable 
             int number = randomGenerator.Next(1, 100);
-            int guess = 0;
+            int guess = -1;
             int guessCount = 0;
             string word;
 
@@ -42,7 +42,7 @@ class Program
                 }
                 else
                 {
-                    word = $"Congratulations! It took you {guessCount} time(s) to guess the MAGIC NUMBER.";
+                    word = $"Congratulations! You gussed it. It took you {guessCount} time(s) to guess the MAGIC NUMBER.";
 
                 }
                 Console.WriteLine($"{word}!");
