@@ -34,11 +34,11 @@ class Program
                 // if, else if , else statements 
                 if (guess > number)
                 {
-                    word = "Higher";
+                    word = "Lower";
                 }
                 else if (guess < number)
                 {
-                    word = "Lower";
+                    word = "Higher";
                 }
                 else
                 {
@@ -51,7 +51,7 @@ class Program
             Console.Write("Do you want to REPLAY the game? Yes/No: ");
             replayGame = Console.ReadLine();
 
-            if (replayGame.ToString() != "yes")
+            if (replayGame.ToLower() != "yes")
             {
                 Console.WriteLine("Thank you for playing!");
             }
