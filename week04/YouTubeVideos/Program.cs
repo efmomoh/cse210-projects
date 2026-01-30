@@ -8,7 +8,7 @@ class Program
 
         // let's instantiate the video object
         // video one
-        Video video1 = new Video("Leraning C#", "EFM", 300);
+        Video video1 = new Video("Leraning C#", "BYU-Idaho", 300);
         video1.AddComment(new Comment("Enssah", "Great explanation!"));
         video1.AddComment(new Comment("Fayia", "Very helpful."));
         video1.AddComment(new Comment("Momoh", "I finally understand abstraction."));
