@@ -40,7 +40,7 @@ public class Word
     {
         if (_isHidden)
         {
-            return "____";
+            return new string ('_', _text.Length);
         }
         else
         {
