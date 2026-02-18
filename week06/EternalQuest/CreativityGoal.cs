@@ -47,7 +47,9 @@ public class CreativeGoal : Goal
 
     public override string GetDetailsString()
     {
-        return $"[Creative Goal] {GetShortName()} - {GetDescription()} | Completed {_timesCompleted} times | Level {GetLevel()} | Points: {GetPoints()}";
+
+        string status = IsComplete() ? "[✓]" : "[]";
+        return $"{status}: {GetShortName()} - {GetDescription()} | Completed {_timesCompleted} times | Level {GetLevel()} | Points: {GetPoints()}";
     }
 
     public override string GetStringRepresentation()
