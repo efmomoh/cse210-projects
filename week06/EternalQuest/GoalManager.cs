@@ -72,13 +72,13 @@ public class GoalManager
         int.TryParse(Console.ReadLine(), out int type);
 
         Console.Write("What is the name of your goal? ");
-        string name = Console.ReadLine();
+        string name = Console.ReadLine().Trim();
 
         Console.Write("What is a short description of it? ");
-        string description = Console.ReadLine();
+        string description = Console.ReadLine().Trim();
 
         Console.Write("What is the amount of points associated with this goal? ");
-        string points = Console.ReadLine();
+        string points = Console.ReadLine().Trim();
 
         if (type == 1)
             _goals.Add(new SimpleGoal(name, description, points));
@@ -133,6 +133,7 @@ public class GoalManager
 
 
     // save goals 
+    // save goals 
     public void SaveGoals()
     {
         Console.Write("Enter Filename: ");
@@ -140,14 +141,27 @@ public class GoalManager
 
         using (StreamWriter output = new StreamWriter(file))
         {
+            // first line is score
             output.WriteLine(_score);
+
             foreach (Goal g in _goals)
             {
-                output.WriteLine(g.GetStringRepresentation());
+                // normalize spacing inside the string (remove extra spaces)
+                string clean = g.GetStringRepresentation();
+
+                // remove extra spaces around commas and colon, then enforce ONE space
+                clean = clean.Replace(" ,", ",")
+                             .Replace(",  ", ", ")
+                             .Replace("  ", " ")
+                             .Trim();
+
+                output.WriteLine(clean);
             }
         }
+
         Console.WriteLine($"Goals saved to {file} file successfully.\n");
     }
+
 
     // Load the saved goals
     public void LoadGoals()
